@@ -15,12 +15,13 @@ int main(){
     int grid[sval][cval];
     for (int i = 0; i < sval; i++){ // Рандомно заполняем массив
         for (int j = 0; j < cval; j++){
-            (rand()%2 == 1) ? grid[i][j] = 1: grid[i][j] = -1;
+            /*grid[i][j] = 1;*/
+            grid[i][j] = (rand()%2 == 1) ?  1: -1;
         }
     }
     for (int i = 0; i < sval; i++){ // Выводим массив
         for (int j = 0; j < cval; j++){
-            (grid[i][j]==1)? cout<<"+ ": cout<<"- "; 
+            (grid[i][j]==1)? cout<< "+ ": cout<< "- "; 
         } 
         cout<<endl;
     }
@@ -33,10 +34,10 @@ int main(){
     int k = 0;
     for (int i = 0; i < sval; i++){ // Считаем E
         for (int j = 0; j < cval; j++){
-            (i-1<0)? n = sval-1 :n = i;
-            (j-1<0)? k = cval-1 :k = j;
-            (i == sval-1)? n = 0 :n = i;
-            (j == cval-1)? k = 0 :k = j;
+            n = (i-1<0)?  sval-1 : i;
+            k = (j-1<0)?  cval-1 : j;
+            n = (i == sval-1)?  0 : i;
+            k = (j == cval-1)?  0 : j;
             e += (grid[n][k]*grid[n][k+1])+(grid[n][k]*grid[n+1][k]);
         }
     }
