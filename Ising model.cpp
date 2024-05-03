@@ -3,8 +3,8 @@ using namespace std;
 
 int main(){
     int sval,cval;
-    int m = 0;
-    int e = 0;
+    int M = 0;
+    int E = 0;
     printf("|Sieve edges resoulution|\n");
     cout<<"Enter string value: ";
     cin >> sval;
@@ -27,7 +27,7 @@ int main(){
     }
     for (int i = 0; i < sval; i++){ // Считаем M
         for (int j = 0; j < cval; j++){
-            m += grid[i][j];
+            M += grid[i][j];
         } 
     }
     int n = 0;
@@ -38,10 +38,10 @@ int main(){
             k = (j-1<0)?  cval-1 : j;
             n = (i == sval-1)?  0 : i;
             k = (j == cval-1)?  0 : j;
-            e += (grid[n][k]*grid[n][k+1])+(grid[n][k]*grid[n+1][k]);
+            E += (grid[n][k]*grid[n][k+1])+(grid[n][k]*grid[n+1][k]);
         }
     }
-    cout<<"M:"<<m<<endl;
-    cout<<"E:"<<e<<endl;
+    cout<<"M:"<<M<<endl;
+    cout<<"E:"<<E<<endl;
     return 0;
 }

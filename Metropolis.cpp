@@ -1,7 +1,6 @@
 #include <iostream>
-#include "Ising model.c++"
+#include "Ising model.cpp"
 
 int main(){
-    
     return 1;
 }
