@@ -1,22 +1,14 @@
 #include <iostream>
 void print(int** arr, int ROWS, int COLS);
+int** init_matrix(int rows,int cols);
 
 int main(){
     int ROWS;
     int COLS;
     std::cin>>ROWS;
     std::cin>>COLS;
-    int arr[ROWS][COLS] = {};
-    int* ptr_arr[ROWS] = {};
-    for(int i=0; i<ROWS; i++)
-    {
-        for (int j = 0; i < COLS; i++)
-        {
-            ptr_arr[i] = arr[i];
-        }
-    }
+    int** ptr_arr = init_matrix(ROWS,COLS);
     print(ptr_arr,ROWS,COLS);
-
     return 0;
 }
 
@@ -30,4 +22,16 @@ void print(int** arr, int ROWS, int COLS)
         }
     printf("\n");
     }
+}
+int** init_matrix(int rows,int cols){
+    int arr[rows][rows] = {};
+    int* ptr_arr[rows] = {};
+    for(int i=0; i<rows; i++)
+    {
+        for (int j = 0; i < cols; i++)
+        {
+            ptr_arr[i] = arr[i];
+        }
+    }
+    return ptr_arr;
 }
